@@ -1936,8 +1936,9 @@ setInterval(function(){var el=document.getElementById('q-step-error');if(!el)ret
                             var _packshots = allProdImgs.filter(function (u) { return !_faceKeys[_key(u)]; });
                             var _mix = [];
                             var _add = function (u) { if (u && !_mix.some(function (x) { return _key(x) === _key(u); })) _mix.push(u); };
-                            _add(_faceUrls[0]);
+                            // Bellun (05/11/2026): a foto do produto vai primeiro; com a modelo de lado na frente a lente saía errada.
                             _packshots.forEach(_add);
+                            _add(_faceUrls[0]);
                             _faceUrls.slice(1).forEach(_add);
                             allProdImgs.forEach(_add);
                             allProdImgs = _mix;
