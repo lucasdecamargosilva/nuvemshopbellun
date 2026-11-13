@@ -49,7 +49,10 @@ setInterval(function(){var el=document.getElementById('q-step-error');if(!el)ret
 
     // Produtos com fotos de referência FIXAS (pedido da loja): manda sempre estas, nesta ordem
     // (a 1ª é a referência principal), no lugar das fotos da galeria. Casa pelo nome (h1) ou pela URL.
-    var PL_REF_FIXAS = [];
+    var PL_REF_FIXAS = [
+        // 13/11/2026 (Lucas): Ignite manda SÓ a foto da modelo de lado (rosto), sem o packshot
+        { nome: /\bignite\b/i, url: /bellun-ignite/i, fotos: ['https://dcdn-us.mitiendanube.com/stores/007/996/845/products/chatgpt-image-16-de-jul-de-2026-09_56_23-3c358939652e7bd24017842065990205-1024-1024-1-19e3af2ec2a31dd10317861131191865-1024-1024.webp'] }
+    ];
 
     const WEBHOOK_PROVA = 'https://n8n.segredosdodrop.com/webhook/gerador-oculos';
     const WEBHOOK_PIX = 'https://n8n.segredosdodrop.com/webhook/bellun-pix';
